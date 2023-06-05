@@ -1,0 +1,94 @@
+.boasVindas {
+    position: absolute;
+    width: 679px;
+    height: 55px;
+    left: 54px;
+    top: 150px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 96px;
+
+    color: #152039;
+
+}
+
+.projetor {
+    position: absolute;
+    width: 273px;
+    height: 244px;
+    left: 1556px;
+    top: 162px;
+    border-radius: 50px;
+
+
+
+
+}
+
+.eletronico {
+
+    position: absolute;
+    width: 273px;
+    height: 260px;
+    left: 1050px;
+    top: 451px;
+    border-radius: 50px;
+
+
+
+}
+
+.auditorio {
+
+    position: absolute;
+    width: 273px;
+    height: 244px;
+    left: 1050px;
+    top: 162px;
+
+    border-radius: 50px;
+}
+
+.som {
+
+
+    position: absolute;
+    width: 273px;
+    height: 260px;
+    left: 1556px;
+    top: 451px;
+
+    border-radius: 50px;
+
+}
+
+.logo {
+
+    position: absolute;
+    width: 329px;
+    height: 285px;
+    left: 150px;
+    top: 281px;
+
+
+}
+
+.fraseSistemaAgendamento {
+    position: absolute;
+    width: 628px;
+    height: 50px;
+   
+    top: 552px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+
+    color: #152039;
+}

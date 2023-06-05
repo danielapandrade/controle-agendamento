@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class MainPageComponent {
 
+  fraseBoasVindas:string="seja bem-vindo(a)!";
+  fraseSistemaAgendemento:string="sistema de agendamentos da UEG, Câmpus Nordeste/Formosa.";
+
 }
