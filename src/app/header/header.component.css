@@ -1,11 +1,14 @@
-button{
+button {
     margin-left: 10px;
+    background-color: #152039;
+    color: white;
+    border: none;
 }
 
-.boasVindas{
+.boasVindas {
     display: flex;
-width: 679px;
-height: 55px;
-flex-direction: column;
-flex-shrink: 0;
+    width: 679px;
+    height: 55px;
+    flex-direction: column;
+    flex-shrink: 0;
 }
