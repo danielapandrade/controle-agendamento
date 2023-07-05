@@ -1,13 +1,18 @@
 .box {
   display: flex;
   flex-direction: row;
+  position: fixed;
+  bottom: 0px;
+  height: 150px;
+  background-color: #152039;
 
 }
 
 
 .logo {
 
- padding: 1%;
+
+  margin-top: 50px;
   cursor: pointer;
   flex: 1 1 0;
 
@@ -16,10 +21,12 @@
 
 
 .copyright {
-  
+
   white-space: nowrap;
   padding: 1%;
   flex: 5 1 0;
+  color: white;
+  margin-top: 30px;
 
 
 }
@@ -29,7 +36,10 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    
-  
+
+
+  }
+  .logo{
+    margin-top: 0px;
   }
 }

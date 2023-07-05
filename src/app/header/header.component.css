@@ -1,0 +1,11 @@
+button{
+    margin-left: 10px;
+}
+
+.boasVindas{
+    display: flex;
+width: 679px;
+height: 55px;
+flex-direction: column;
+flex-shrink: 0;
+}
