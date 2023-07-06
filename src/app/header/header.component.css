@@ -1,8 +1,21 @@
+nav{
+    overflow-x: hidden; 
+}
+
 button {
     margin-left: 10px;
     background-color: #152039;
     color: white;
     border: none;
+}
+
+.text{
+    color: #152039;
+font-family: Poppins;
+overflow-x: hidden;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
 }
 
 .boasVindas {

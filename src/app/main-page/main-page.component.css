@@ -1,6 +1,6 @@
 * {
  background-color: white;
- overflow-x: hidden;
+
 }
 
 .show-grid {
@@ -58,6 +58,17 @@ img {
   text-align: center;
 }
 
+.frase{
+  color: #152039;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+
 @media (max-width: 800px) {
  
 .boasVindas{
@@ -65,9 +76,12 @@ img {
 }
 
 
+.copyright{
+  text-align: center;
+}
 img {
  
-  width: 100px;
+  width: 75px;
   text-align: center;
   display: block;
   margin-left: auto;
