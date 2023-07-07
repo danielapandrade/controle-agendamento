@@ -1,21 +1,30 @@
-nav{
-    overflow-x: hidden; 
+nav {
+    overflow-x: hidden;
 }
 
 button {
+
     margin-left: 10px;
     background-color: #152039;
     color: white;
     border: none;
+    font-weight: 20px;
+    
 }
+.btn-class:hover {
 
-.text{
+    background-color: grey;
+  
+  }
+
+
+.text {
     color: #152039;
-font-family: Poppins;
-overflow-x: hidden;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    font-family: Poppins;
+    overflow-x: hidden;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .boasVindas {

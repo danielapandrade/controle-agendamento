@@ -17,11 +17,12 @@
 
 img {
  
-  width: 175px;
+  width: 145px;
   text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 
 }
 .w{
@@ -43,7 +44,6 @@ img {
   justify-items: center;
   align-content: center;
   place-items: center;
- 
   display: grid;
   justify-content: center;
 }
@@ -81,7 +81,7 @@ img {
 }
 img {
  
-  width: 75px;
+  width: 70px;
   text-align: center;
   display: block;
   margin-left: auto;

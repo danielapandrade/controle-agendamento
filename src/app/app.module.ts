@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { DescricaoMaterialComponent } from './descricao-material/descricao-material.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
     HeaderComponent,
     MainPageComponent,
     FooterComponent,
-    CadastrarComponent
+    CadastrarComponent,
+    DescricaoMaterialComponent,
+    
   ],
   imports: [
     BrowserModule,
