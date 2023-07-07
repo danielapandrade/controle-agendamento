@@ -1,7 +1,10 @@
-<div class="navbar">
-    <img src="assets/img/logo.png" class="logo">
-    <h1>A G E N D A M E N T O S</h1>
-    <a href="#"><span class="text">Entrar</span></a>
-    <a href="#"><span class="text">Cadastre-se</span></a>
+<nav class="navbar navbar-light bg-light">
+  <div class="navbar-brand" href="#">
+    <img src="assets/img/logo.png"  width="30" height="30" class="d-inline-block align-top" alt="">
+    <span class="text">A G E N D A M E N T O S</span> 
   </div>
-  
+  <div >
+    <button type="button" class="btn btn-class" [routerLink]="['/cadastrar']" >Cadastrar</button>
+    <button type="button" class="btn btn-class" >Entrar</button>
+</div>
+</nav>
