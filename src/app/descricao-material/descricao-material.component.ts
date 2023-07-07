@@ -30,6 +30,7 @@ export class DescricaoMaterialComponent {
     if(this.material==='som'){
       this.descricao='Microfones, caixas de som e outros recursos.'
     }
+    
 
     if(this.material==='eletronico'){
       this.descricao='Cabos HDMI, periféricos de entrada/saída e outros recursos.'
