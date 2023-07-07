@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
+
+  @Input()
+  fraseBoasVindas:string="";
+  fraseSistemaAgendemento:string="sistema de agendamentos da universidade!";
 
 }
