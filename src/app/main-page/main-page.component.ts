@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class MainPageComponent {
 
-  @Input()
-  fraseBoasVindas:string="";
+  
+  fraseBoasVindas:string="SEJA BEM VINDO(A)!";
   fraseSistemaAgendemento:string="sistema de agendamentos da universidade!";
 
 }

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'controle-agendamento';
-  tituloBoasVindas="seja bem-vindo(a)!"
+  agendamentos="A G E N D A M E N T O S"
 }
