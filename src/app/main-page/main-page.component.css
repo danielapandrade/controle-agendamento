@@ -1,0 +1,91 @@
+* {
+ background-color: white;
+
+}
+
+.show-grid {
+  padding: 10px;
+  background-color: white;
+
+
+}
+
+.show-grid .row {
+  margin-bottom: 15px;
+
+}
+
+img {
+ 
+  width: 145px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+
+}
+.w{
+  width:50px;
+}
+.show-grid [class^=col-] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  place-items: center;
+  display: grid;
+  justify-content: center;
+}
+
+.boasVindas {
+  color: #152039;
+  font-size: 64px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.frase{
+  color: #152039;
+  font-size: 16px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+
+@media (max-width: 800px) {
+ 
+.boasVindas{
+  font-size: 16px;
+}
+
+
+.copyright{
+  text-align: center;
+}
+img {
+ 
+  width: 70px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+}
