@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class DescricaoMaterialComponent {
 
   apiUrl = '';
-  commentList: any[] = [];
+  materialList: any[] = [];
 
   material: string | null;
 
@@ -49,7 +49,7 @@ export class DescricaoMaterialComponent {
     return promise.then(
       (response: any) => {
 
-        this.commentList = response;
+        this.materialList = response;
       },
       (error: any) => {
 
