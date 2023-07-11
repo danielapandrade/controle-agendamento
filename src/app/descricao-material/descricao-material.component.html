@@ -1,5 +1,8 @@
-<div class="card">
-    <div class="card-body">
-      {{descricao}}
-    </div>
+<div class="card" *ngFor="let comment of commentList">
+  <div class="card-body">
+    <h1>{{comment.nome}}</h1>
   </div>
+  <div class="card-body">
+    <h2> {{comment.descricao}}</h2>
+  </div>
+</div>

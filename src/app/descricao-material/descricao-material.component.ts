@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-descricao-material',
@@ -7,34 +8,54 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./descricao-material.component.css']
 })
 export class DescricaoMaterialComponent {
-  material: string | null;
-  descricao: string;
 
-  constructor(private route: ActivatedRoute) { }
+  apiUrl = '';
+  commentList: any[] = [];
+
+  material: string | null;
+
+
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit() {
 
-   
     this.route.paramMap.subscribe(params => {
-      this.material =  this.route.snapshot.paramMap.get('material');
+      this.material = this.route.snapshot.paramMap.get('material');
     })
 
-    if(this.material==='auditorio'){
-      this.descricao='Auditório com capacidade para em torno de 250 pessoas.'
-    }
-    
-    if(this.material==='projetor'){
-      this.descricao='Projetor epson com saída de áudio, HDMI e outros recursos.'
+    if (this.material === 'auditorio') {
+      this.apiUrl = 'https://mocki.io/v1/fba6a83e-dee9-40b1-ae11-84f3fefeab5a'
     }
 
-    if(this.material==='som'){
-      this.descricao='Microfones, caixas de som e outros recursos.'
+    if (this.material === 'projetor') {
+      this.apiUrl = 'https://mocki.io/v1/f5cf1e64-4213-48b1-8c75-5a10e1d00707';
     }
-    
 
-    if(this.material==='eletronico'){
-      this.descricao='Cabos HDMI, periféricos de entrada/saída e outros recursos.'
+    if (this.material === 'som') {
+      this.apiUrl = 'https://mocki.io/v1/77538ab7-6be0-49a8-b1b6-9533c34908de';
     }
+
+
+    if (this.material === 'eletronico') {
+      this.apiUrl = 'https://mocki.io/v1/83d87ee3-9666-4a20-bc7b-c3e3d5c15417'
+    }
+
+    this.getComments();
+  }
+
+  getComments() {
+    const promise = this.http.get<[]>(this.apiUrl).toPromise();
+
+    return promise.then(
+      (response: any) => {
+
+        this.commentList = response;
+      },
+      (error: any) => {
+
+        console.log(error);
+      }
+    );
   }
 }
 
