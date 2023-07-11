@@ -8,6 +8,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
 import { DescricaoMaterialComponent } from './descricao-material/descricao-material.component';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,12 +20,14 @@ import { DescricaoMaterialComponent } from './descricao-material/descricao-mater
     MainPageComponent,
     FooterComponent,
     CadastrarComponent,
-    DescricaoMaterialComponent,
+    DescricaoMaterialComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

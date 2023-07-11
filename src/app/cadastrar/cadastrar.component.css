@@ -8,6 +8,11 @@
 
 }
 
+
+.erros{
+    color: red;
+}
+
 .panel {
     margin-top: 2vh;
     width: 681px;
