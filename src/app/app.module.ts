@@ -11,6 +11,7 @@ import { DescricaoMaterialComponent } from './descricao-material/descricao-mater
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MainPanelComponent } from './main-panel/main-panel.component';
 
 
 
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     MainPageComponent,
     FooterComponent,
     CadastrarComponent,
-    DescricaoMaterialComponent
+    DescricaoMaterialComponent,
+    MainPanelComponent
     
     
   ],

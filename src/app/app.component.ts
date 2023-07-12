@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'controle-agendamento';
-  agendamentos="A G E N D A M E N T O S"
+  agendamentos="A G E N D A M E N T O S";
+  
 }
