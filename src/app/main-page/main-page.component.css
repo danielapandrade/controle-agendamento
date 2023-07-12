@@ -1,5 +1,6 @@
 * {
  background-color: white;
+ overflow-y: hidden;
 
 }
 
@@ -17,7 +18,7 @@
 
 img {
  
-  width: 145px;
+  width: 115px;
   text-align: center;
   display: block;
   margin-left: auto;
@@ -50,7 +51,7 @@ img {
 
 .boasVindas {
   color: #152039;
-  font-size: 64px;
+  font-size: 32px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 700;

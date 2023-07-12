@@ -3,7 +3,6 @@
   flex-direction: row;
   position: fixed;
   bottom: 0px;
-
   background-color: #152039;
 
 }
@@ -12,10 +11,11 @@
 .logo {
 
 
-  margin-top: 25px;
+  margin-top: 20px;
   cursor: pointer;
   flex: 1 1 0;
   height: 50px;
+  border: 5px white;
 
 
 
@@ -37,7 +37,7 @@
 @media (max-width: 800px) {
 
   .box {
-    height: 100px;
+    height: 80px;
   }
 
   .copyright {

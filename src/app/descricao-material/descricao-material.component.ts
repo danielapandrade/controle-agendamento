@@ -40,10 +40,10 @@ export class DescricaoMaterialComponent {
       this.apiUrl = 'https://mocki.io/v1/83d87ee3-9666-4a20-bc7b-c3e3d5c15417'
     }
 
-    this.getComments();
+    this.getMaterialList();
   }
 
-  getComments() {
+  getMaterialList() {
     const promise = this.http.get<[]>(this.apiUrl).toPromise();
 
     return promise.then(
