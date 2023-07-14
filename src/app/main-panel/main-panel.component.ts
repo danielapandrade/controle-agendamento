@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Agendamento } from '../model/agendamento';
+import { AgendamentoService } from '../services/agendamento.service';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { elementAt } from 'rxjs';
 
 @Component({
   selector: 'app-main-panel',
@@ -6,5 +11,81 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-panel.component.css']
 })
 export class MainPanelComponent {
+
+  agendamento = {} as Agendamento;
+  agendamentos: Agendamento[];
+  editar = "Editar";
+  formAgendamento: NgForm;
+  isVisible = false;
+
+  constructor(private agendamentoService: AgendamentoService) {
+
+  }
+
+  ngOnInit() {
+    this.getAgendamentos();
+
+    this.agendamentos.forEach(element => {
+      element.isEdit = false;
+
+    });
+
+
+  }
+
+  saveAgendamento(form: NgForm) {
+    if (this.agendamento.id !== undefined) {
+      this.agendamentoService.updateAgendamento(this.agendamento).subscribe(() => {
+        this.cleanForm(form);
+
+      });
+    } else {
+      this.agendamentoService.saveAgendamento(this.agendamento).subscribe(() => {
+        this.cleanForm(form);
+
+      });
+    }
+  }
+
+  getAgendamentos() {
+    this.agendamentoService.getAgendamentos().subscribe((agendamentos: Agendamento[]) => {
+      this.agendamentos = agendamentos;
+
+    });
+  }
+
+  deleteAgendamento(agendamento: Agendamento) {
+    this.agendamentoService.deleteAgendamento(agendamento).subscribe(() => {
+      this.getAgendamentos();
+    });
+  }
+
+  editAgendamento(agendamento: Agendamento) {
+    this.agendamento = { ...agendamento };
+  }
+
+  cleanForm(form: NgForm) {
+    this.getAgendamentos();
+    form.resetForm();
+    this.agendamento = {} as Agendamento;
+  }
+
+  editarItem(item: Agendamento) {
+    item.isEdit = true;
+  }
+
+  onEdit(item: Agendamento) {
+
+    item.isEdit = false;
+    this.agendamento = { ...item }
+    this.agendamentoService.updateAgendamento(this.agendamento).subscribe(() => {
+      this.cleanForm(this.formAgendamento);
+
+    });
+
+
+
+  }
+
 
 }

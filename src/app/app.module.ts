@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPanelComponent } from './main-panel/main-panel.component';
+import { CadastrarAgendamentoComponent } from './main-panel/cadastrar-agendamento/cadastrar-agendamento.component';
 
 
 
@@ -23,7 +24,8 @@ import { MainPanelComponent } from './main-panel/main-panel.component';
     FooterComponent,
     CadastrarComponent,
     DescricaoMaterialComponent,
-    MainPanelComponent
+    MainPanelComponent,
+    CadastrarAgendamentoComponent
     
     
   ],

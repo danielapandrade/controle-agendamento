@@ -1,0 +1,26 @@
+{
+  "agendamentos": [
+    {
+      "id": 1,
+      "data": "05/05/2024",
+      "item": "Videoteca",
+      "horarioInicio": "18h30min",
+      "horarioFim": "25h",
+      "turno": "mtutuono",
+      "local": "75",
+      "status": "autorizado",
+      "isEdit": false
+    },
+    {
+      "id": 3,
+      "data": "05/05/2024",
+      "item": "Videoteca",
+      "horarioInicio": "18h30min",
+      "horarioFim": "22h",
+      "turno": "noturnoio",
+      "local": "58",
+      "status": "autorizado",
+      "isEdit": false
+    }
+  ]
+}

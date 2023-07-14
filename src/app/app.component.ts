@@ -15,7 +15,7 @@ export class AppComponent {
   constructor(private router: Router) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if (val.url == '/cadastrar' || val.url == '/entrar') {
+        if (val.url == '/cadastrar' || val.url == '/entrar' || val.url == '/entrar/cadastrar-agendamento' ) {
           this.showHeader = false;
           this.showFooter = false;
         } else {

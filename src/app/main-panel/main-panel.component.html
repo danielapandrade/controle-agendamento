@@ -4,9 +4,8 @@
     <span class="text">AGENDAMENTOS</span>
   </div>
   <div>
-    <a href="#" class="text">AUDITÓRIO</a>
-    <a href="#">AUDITÓRIO</a>
-    <a href="#">AUDITÓRIO</a>
+    <button [routerLink]="['cadastrar-agendamento']">REALIZAR AGENDAMENTO</button>
+
     <button class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
         class="bi bi-person" viewBox="0 0 16 16">
         <path
@@ -14,7 +13,7 @@
       </svg></button>
   </div>
 </nav>
-<section class="vh-100" style="background-color: #eee;">
+<section>
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-12 col-xl-10">
@@ -39,112 +38,82 @@
             <table class="table mb-0">
               <thead>
                 <tr class="rectangle">
-                  <th scope="col">Team Member</th>
-                  <th scope="col">Task</th>
-                  <th scope="col">Actions</th>
-                  <th scope="col">Actions</th>
-                  <th scope="col">Actions</th>
-                  <th scope="col">Actions</th>
-                  <th scope="col">Priority</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Horário de Início</th>
+                  <th scope="col">Horário de Término</th>
+                  <th scope="col">Turno</th>
+                  <th scope="col">Local</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Ações</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="fw-normal">
-                  <th>
-                    <span class="ms-2">Alice Mayer</span>
-                  </th>
-                  <td class="align-middle">
-                    <span>Call Sam For payments</span>
-                  </td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <span class="ms-2">Kate Moss</span>
-                  </th>
-                  <td class="align-middle">Make payment to Bluedart</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
 
-                    <span class="ms-2">Danny McChain</span>
-                  </th>
-                  <td class="align-middle">Office rent</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-warning">Middle priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th>
-                    <span class="ms-2">Alexa Chung</span>
-                  </th>
-                  <td class="align-middle">Office grocery shopping</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-danger">High priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th class="">
 
-                    <span class="ms-2">Ben Smith</span>
-                  </th>
-                  <td class="align-middle">Ask for Lunch to Clients</td>
-                  <td class="align-middle">
-                    <h6 class="mb-0"><span class="badge bg-success">Low priority</span></h6>
-                  </td>
-                  <td class="align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-danger"></i></a>
-                  </td>
-                </tr>
-                <tr class="fw-normal">
-                  <th class="border-0">
+                <tr *ngFor="let agendamento of agendamentos">
 
-                    <span class="ms-2">Annie Hall</span>
-                  </th>
-                  <td class="border-0 align-middle">Create weekly tasks plan</td>
-                  <td class="border-0 align-middle">
-                    <h6 class="mb-0"><span class="badge bg-warning">Medium priority</span></h6>
+                  <form id="add-form" click="editAgendamento(agendamento)"
+                    (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
+                  </form>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.item" id="item" name="item"
+                      required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                    <div  *ngIf=!agendamento.isEdit>
+                      {{agendamento.item}}
+                    </div>
                   </td>
-                  <td class="border-0 align-middle">
-                    <a href="#!" data-mdb-toggle="tooltip" title="Done"><i
-                        class="fas fa-check text-success me-3"></i></a>
-                    <a href="#!" data-mdb-toggle="tooltip" title="Remove"><i
-                        class="fas fa-trash-alt text-warning"></i></a>
+
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.data" id="data" name="data" #model="ngModel" required
+                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
                   </td>
-                </tr>
+
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.horarioInicio" id="horarioInicio" name="horarioInicio"
+                      #model="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  </td>
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim" name="horarioInicio"
+                      #model="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  </td>
+
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno" #model="ngModel" required
+                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  </td>
+
+
+
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel" required
+                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  </td>
+
+                  <td>
+                    <input type="text" [(ngModel)]="agendamento.status" [disabled]="true" id="local" name="local"
+                      #model="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  </td>
+                  <td>
+                   
+                    <div *ngIf=agendamento.isEdit>
+                      <button class="btn btn-sm btn-danger" (click)="  onEdit(agendamento)"   >Salvar alteração</button> 
+                      <button class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false">Cancelar</button> 
+                  </div>
+                  <div *ngIf=!agendamento.isEdit>
+                      <button class="btn btn-sm btn-success" (click)=" editarItem(agendamento)">Edit</button> 
+                  </div>
+                  </td>
+
+                
+
               </tbody>
+
+
             </table>
 
           </div>
