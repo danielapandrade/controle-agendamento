@@ -53,7 +53,7 @@
               <tbody>
 
 
-                <tr *ngFor="let agendamento of agendamentos">
+                <tr *ngFor="let agendamento of agendamentos | paginate: { itemsPerPage: 5, currentPage: paginaAtual };">
                   <form id="add-form" click="editAgendamento(agendamento)"
                     (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
                   </form>
@@ -148,9 +148,13 @@
                   </td>
                 </tr>
               </tbody>
-
+             
+              
 
             </table>
+
+            
+           
 
           </div>
 
@@ -160,3 +164,8 @@
     </div>
   </div>
 </section>
+<div class="pag">
+  <pagination-controls  (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+              
+  </pagination-controls>
+</div>

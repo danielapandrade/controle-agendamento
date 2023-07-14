@@ -16,6 +16,8 @@ export class CadastrarAgendamentoComponent {
   agendamentos: Agendamento[];
   apiUrl = '';
   materialList: any[] = [];
+  public isVisible: boolean = false;
+
   
   constructor(private agendamentoService: AgendamentoService, private route: ActivatedRoute, private http: HttpClient) { }
 
@@ -64,6 +66,15 @@ export class CadastrarAgendamentoComponent {
     this.getAgendamentos();
     form.resetForm();
     this.agendamento = {} as Agendamento;
+  }
+
+  
+  showAlert() : void {
+    if (this.isVisible) { 
+      return;
+    } 
+    this.isVisible = true;
+    setTimeout(()=> this.isVisible = false,2500)
   }
 
 

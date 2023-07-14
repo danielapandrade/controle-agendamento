@@ -54,16 +54,18 @@
 
         <div >
           <label for="model">Local</label>
-          <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel"
-            class="form-control" placeholder="Digite o modelo">
+          <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #local="ngModel" class="form-control" placeholder="Informe o local do agendamento">
         </div>
+        
 
 
       </div>
 
-      <button   type="submit" class="btn btn-primary">Salvar</button>
-     
-      <button type="reset" class="btn btn-secondary"  [routerLink]="['/entrar']"  (click)="cleanForm(f)">Cancelar</button>
+      <button [disabled]="item.invalid || data.invalid || turno.invalid || horarioInicial.invalid || horarioFim.invalid"  type="submit" class="btn btn-primary"  (click)="showAlert()">Salvar</button>
+      <div class="alert" [class.visible]="isVisible"> 
+        Agendamento efetuado com sucesso!
+      </div>
+      <button type="reset" class="btn btn-secondary"  [routerLink]="['/entrar']"  (click)="cleanForm(f)">Voltar</button>
     </form>
   </div>
 </div>
