@@ -4,10 +4,10 @@
     <span class="text">A G E N D A M E N T O S</span>
   </div>
   <div>
-    <button [routerLink]="['/entrar/agendar']" >
+    <button [routerLink]="['/entrar/agendar']">
       <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-<span>AGENDAR</span></button>
-    
+      <span>AGENDAR</span></button>
+
     <button class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor"
         class="bi bi-person" viewBox="0 0 16 16">
         <path
@@ -53,7 +53,7 @@
               <tbody>
 
 
-                <tr *ngFor="let agendamento of agendamentos" >
+                <tr *ngFor="let agendamento of agendamentos">
                   <form id="add-form" click="editAgendamento(agendamento)"
                     (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
                   </form>
@@ -89,18 +89,18 @@
                     <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim"
                       name="horarioFim" #horarioFim="ngModel" required class="form-control"
                       [ngClass]="{ 'is-invalid': f.submitted && horarioFim.invalid }">
-                      <div *ngIf=!agendamento.isEdit >
-                        {{agendamento.horarioFim}}
-                      </div>
+                    <div *ngIf=!agendamento.isEdit>
+                      {{agendamento.horarioFim}}
+                    </div>
                   </td>
 
                   <td>
                     <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno"
                       #turno="ngModel" required class="form-control"
                       [ngClass]="{ 'is-invalid': f.submitted && turno.invalid}">
-                      <div *ngIf=!agendamento.isEdit>
-                        {{ agendamento.turno}}
-                      </div>
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.turno}}
+                    </div>
                   </td>
 
 
@@ -109,9 +109,9 @@
                     <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.local" id="local" name="local"
                       #local="ngModel" required class="form-control"
                       [ngClass]="{ 'is-invalid': f.submitted && local.invalid }">
-                      <div *ngIf=!agendamento.isEdit>
-                        {{ agendamento.local}}
-                      </div>
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.local}}
+                    </div>
                   </td>
 
                   <td>
@@ -122,7 +122,7 @@
                   </td>
                   <td>
 
-           
+
 
                     <div *ngIf=agendamento.isEdit class="dsp">
                       <button class="btn btn-sm btn-danger" (click)="onEdit(agendamento)"><i class="fa fa-floppy-o"
@@ -146,7 +146,7 @@
                     </div>
 
                   </td>
-                  
+                </tr>
               </tbody>
 
 

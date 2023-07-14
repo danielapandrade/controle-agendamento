@@ -12,6 +12,8 @@ import { elementAt } from 'rxjs';
 })
 export class MainPanelComponent {
 
+  public paginaAtual = 1;
+
   agendamento = {} as Agendamento;
   agendamentos: Agendamento[];
   editar = "Editar";
