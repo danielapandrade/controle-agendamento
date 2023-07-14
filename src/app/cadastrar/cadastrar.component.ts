@@ -13,7 +13,7 @@ export class CadastrarComponent {
   constructor() {
   }
 
-  /*########### Template Driven Form ###########*/
+ 
   submitForm(form: NgForm) {
     this.isSubmitted = true;
     if(!form.valid) {

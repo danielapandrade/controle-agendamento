@@ -27,6 +27,8 @@ export class MainPanelComponent {
 
   }
 
+  formatsDateTest: string[] = ['dd/MM/yyyy'];
+
   saveAgendamento(form: NgForm) {
     if (this.agendamento.id !== undefined) {
       this.agendamentoService.updateAgendamento(this.agendamento).subscribe(() => {

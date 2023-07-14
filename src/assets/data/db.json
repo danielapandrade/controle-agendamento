@@ -1,55 +1,46 @@
 {
   "agendamentos": [
     {
-      "data": "xz\\x\\z",
-      "horarioInicio": "x\\zxz\\",
-      "horarioFim": "\\zxz\\",
-      "turno": "\\zx\\z",
-      "local": "xz\\x\\zx",
-      "item": "projetor",
+      "horarioInicio": "12h",
+      "item": "Auditório",
       "status": "Aguardando autorização",
-      "id": 1,
-      "isEdit": false
+      "id": 1
     },
     {
-      "data": "xz\\x\\z",
-      "horarioInicio": "x\\zxz\\",
-      "horarioFim": "\\zxz\\",
-      "turno": "\\zx\\z",
-      "local": "xz\\x\\zx",
+      "horarioFim": "12h",
       "item": "Auditório",
       "status": "Aguardando autorização",
       "id": 2
     },
     {
-      "data": "asdasd",
-      "horarioInicio": "asdasd",
-      "horarioFim": "dasdas",
-      "turno": "dasdas",
-      "local": "dasdas",
       "item": "Auditório",
       "status": "Aguardando autorização",
       "id": 3
     },
     {
-      "data": "asdasd",
-      "horarioInicio": "asdasd",
-      "horarioFim": "dasdas",
-      "turno": "dasdas",
-      "local": "dasdas",
       "item": "Auditório",
       "status": "Aguardando autorização",
       "id": 4
     },
     {
-      "item": "projetor",
-      "data": "12/05/2023",
-      "horarioInicio": "10h",
-      "horarioFim": "13h",
-      "turno": "matutino",
-      "local": "sala 01",
+      "item": "Auditório",
       "status": "Aguardando autorização",
       "id": 5
+    },
+    {
+      "item": "Auditório",
+      "status": "Aguardando autorização",
+      "id": 6
+    },
+    {
+      "item": "Auditório",
+      "status": "Aguardando autorização",
+      "id": 7
+    },
+    {
+      "item": "Auditório",
+      "status": "Aguardando autorização",
+      "id": 8
     }
   ]
 }

@@ -58,38 +58,58 @@
 
                   <td>
                     <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.item" id="item" name="item"
-                      required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                      #item="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && item.invalid }">
                     <div *ngIf=!agendamento.isEdit>
                       {{agendamento.item}}
                     </div>
                   </td>
 
-                  <td>
-                    <input type="text" [(ngModel)]="agendamento.data" id="data" name="data" #model="ngModel" required
-                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                  <td *ngFor="let format of formatsDateTest">
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.data" id="data" name="data"
+                      #data="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && data.invalid }">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.data | date: format}}
+                    </div>
                   </td>
 
                   <td>
-                    <input type="text" [(ngModel)]="agendamento.horarioInicio" id="horarioInicio" name="horarioInicio"
-                      #model="ngModel" required class="form-control"
-                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
-                  </td>
-                  <td>
-                    <input type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim" name="horarioInicio"
-                      #model="ngModel" required class="form-control"
-                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.horarioInicio"
+                      id="horarioInicio" name="horarioInicio" #horarioInicio="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && horarioInicio.invalid }" />
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.horarioInicio}}
+                    </div>
                   </td>
 
                   <td>
-                    <input type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno" #model="ngModel" required
-                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim"
+                      name="horarioFim" #horarioFim="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && horarioFim.invalid }">
+                      <div *ngIf=!agendamento.isEdit>
+                        {{ agendamento.horarioFim}}
+                      </div>
+                  </td>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno"
+                      #turno="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && turno.invalid}">
+                      <div *ngIf=!agendamento.isEdit>
+                        {{ agendamento.turno}}
+                      </div>
                   </td>
 
 
 
                   <td>
-                    <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel" required
-                      class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.local" id="local" name="local"
+                      #local="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && local.invalid }">
+                      <div *ngIf=!agendamento.isEdit>
+                        {{ agendamento.local}}
+                      </div>
                   </td>
 
                   <td>

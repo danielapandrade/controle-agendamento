@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Agendamento } from '../../model/agendamento';
 import { AgendamentoService } from '../../services/agendamento.service';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -19,6 +19,13 @@ export class CadastrarAgendamentoComponent {
   isVisible = false;
   elemento: string | null;
   constructor(private agendamentoService: AgendamentoService, private route: ActivatedRoute, private http: HttpClient) { }
+
+  date = new Date();
+  
+
+  updateDate(event: any) {
+    this.date = event.target.valueAsDate;
+  }
 
   ngOnInit() {
     this.getAgendamentos();
