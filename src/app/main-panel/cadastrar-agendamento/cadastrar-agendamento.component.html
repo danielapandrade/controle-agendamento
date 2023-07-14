@@ -1,12 +1,12 @@
 <div class="card add-car">
   <h5 class="card-header">ADICIONAR AGENDAMENTO</h5>
-  <h5>{{elemento}}</h5>
+  
   <div class="card-body">
     <form id="add-form" (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
 
 
       <div class="form-group">
-        <div *ngIf=!isVisible>
+        <div >
           <label for="model">Item</label>
           <input type="text" [(ngModel)]="agendamento.item" id="item" name="item" #item="ngModel" required
             class="form-control" [ngClass]="{ 'is-invalid': f.submitted && item.invalid }" placeholder="Informe o item">
@@ -52,7 +52,7 @@
 
 
 
-        <div *ngIf=!isVisible>
+        <div >
           <label for="model">Local</label>
           <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel"
             class="form-control" placeholder="Digite o modelo">
@@ -61,9 +61,9 @@
 
       </div>
 
-      <button *ngIf=!isVisible  type="submit" class="btn btn-primary btn-add-car">Salvar</button>
-      <button *ngIf=isVisible  (click)="saveAuditorio(agendamento)" class="btn btn-primary btn-add-car">Salvar </button>
-      <button type="reset" class="btn btn-secondary btn-add-car" (click)="cleanForm(f)">Cancelar</button>
+      <button   type="submit" class="btn btn-primary ">Salvar</button>
+     
+      <button type="reset" class="btn btn-secondary" (click)="cleanForm(f)">Cancelar</button>
     </form>
   </div>
 </div>

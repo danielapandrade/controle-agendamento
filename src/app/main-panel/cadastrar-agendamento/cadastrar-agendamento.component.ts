@@ -16,27 +16,13 @@ export class CadastrarAgendamentoComponent {
   agendamentos: Agendamento[];
   apiUrl = '';
   materialList: any[] = [];
-  isVisible = false;
-  elemento: string | null;
+  
   constructor(private agendamentoService: AgendamentoService, private route: ActivatedRoute, private http: HttpClient) { }
 
   date = new Date();
   
-
-  updateDate(event: any) {
-    this.date = event.target.valueAsDate;
-  }
-
   ngOnInit() {
     this.getAgendamentos();
-
-    this.route.paramMap.subscribe(params => {
-      this.elemento = this.route.snapshot.paramMap.get('elemento');
-    })
-
-    if (this.elemento === 'auditorio') {
-      this.isVisible = true;
-    }
 
 
   }
