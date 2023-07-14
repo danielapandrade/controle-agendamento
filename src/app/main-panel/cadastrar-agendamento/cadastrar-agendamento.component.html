@@ -45,7 +45,7 @@
         <label for="model">Turno</label>
         <input type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno" #turno="ngModel"
           required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && turno.invalid }"
-          placeholder="Informe o horário de término">
+          placeholder="Informe o turno do agendamento">
         <div *ngIf="f.submitted && turno.invalid" class="invalid-feedback">
           <div *ngIf="turno.errors?.['required']">Informe o turno do agendamento.</div>
         </div>
@@ -61,9 +61,9 @@
 
       </div>
 
-      <button   type="submit" class="btn btn-primary ">Salvar</button>
+      <button   type="submit" class="btn btn-primary">Salvar</button>
      
-      <button type="reset" class="btn btn-secondary" (click)="cleanForm(f)">Cancelar</button>
+      <button type="reset" class="btn btn-secondary"  [routerLink]="['/entrar']"  (click)="cleanForm(f)">Cancelar</button>
     </form>
   </div>
 </div>

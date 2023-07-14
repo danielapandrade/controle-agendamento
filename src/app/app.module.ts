@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { CadastrarAgendamentoComponent } from './main-panel/cadastrar-agendamento/cadastrar-agendamento.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -34,7 +35,8 @@ import { CadastrarAgendamentoComponent } from './main-panel/cadastrar-agendament
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
