@@ -25,12 +25,6 @@ export class MainPanelComponent {
   ngOnInit() {
     this.getAgendamentos();
 
-    this.agendamentos.forEach(element => {
-      element.isEdit = false;
-
-    });
-
-
   }
 
   saveAgendamento(form: NgForm) {
@@ -41,6 +35,7 @@ export class MainPanelComponent {
       });
     } else {
       this.agendamentoService.saveAgendamento(this.agendamento).subscribe(() => {
+        
         this.cleanForm(form);
 
       });

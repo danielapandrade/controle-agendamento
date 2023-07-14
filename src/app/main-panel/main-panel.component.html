@@ -1,12 +1,12 @@
 <nav class="navbar navbar-light bg-light">
   <div class="navbar-brand" href="#">
     <img src="assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-    <span class="text">AGENDAMENTOS</span>
+    <span class="text">A G E N D A M E N T O S</span>
   </div>
   <div>
-    <button [routerLink]="['cadastrar-agendamento']">REALIZAR AGENDAMENTO</button>
-
-    <button class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+    <button [routerLink]="['cadastrar-agendamento','agendar']">REALIZAR AGENDAMENTO</button>
+    <button [routerLink]="['cadastrar-agendamento','auditorio']">AUDITÓRIO</button>
+    <button class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor"
         class="bi bi-person" viewBox="0 0 16 16">
         <path
           d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
@@ -52,7 +52,6 @@
 
 
                 <tr *ngFor="let agendamento of agendamentos">
-
                   <form id="add-form" click="editAgendamento(agendamento)"
                     (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
                   </form>
@@ -60,7 +59,7 @@
                   <td>
                     <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.item" id="item" name="item"
                       required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
-                    <div  *ngIf=!agendamento.isEdit>
+                    <div *ngIf=!agendamento.isEdit>
                       {{agendamento.item}}
                     </div>
                   </td>
@@ -94,22 +93,35 @@
                   </td>
 
                   <td>
-                    <input type="text" [(ngModel)]="agendamento.status" [disabled]="true" id="local" name="local"
-                      #model="ngModel" required class="form-control"
-                      [ngClass]="{ 'is-invalid': f.submitted && model.invalid }">
+                    <div>
+                      {{agendamento.status}}
+                    </div>
+
                   </td>
                   <td>
-                   
-                    <div *ngIf=agendamento.isEdit>
-                      <button class="btn btn-sm btn-danger" (click)="  onEdit(agendamento)"   >Salvar alteração</button> 
-                      <button class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false">Cancelar</button> 
-                  </div>
-                  <div *ngIf=!agendamento.isEdit>
-                      <button class="btn btn-sm btn-success" (click)=" editarItem(agendamento)">Edit</button> 
-                  </div>
-                  </td>
 
-                
+                    <div *ngIf=agendamento.isEdit class="dsp">
+                      <button class="btn btn-sm btn-danger" (click)="onEdit(agendamento)"><i class="fa fa-floppy-o"
+                          aria-hidden="true"></i>
+                      </button>
+                      <button class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false"><i class="fa fa-times"
+                          aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div *ngIf=!agendamento.isEdit class="dsp">
+                      <button class="btn btn-sm btn-success" (click)=" editarItem(agendamento)" data-toggle="tooltip"
+                        data-placement="top" title="Editar">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true">
+                        </i>
+                      </button>
+                    </div>
+                    <div *ngIf=!agendamento.isEdit>
+                      <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAgendamento(agendamento)"
+                        data-toggle="tooltip" data-placement="top" title="Apagar"><i class="fa fa-eraser"
+                          aria-hidden="true"></i></button>
+                    </div>
+
+                  </td>
 
               </tbody>
 

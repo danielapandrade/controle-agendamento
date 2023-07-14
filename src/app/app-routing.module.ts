@@ -7,8 +7,8 @@ import { MainPanelComponent } from './main-panel/main-panel.component';
 import { CadastrarAgendamentoComponent } from './main-panel/cadastrar-agendamento/cadastrar-agendamento.component';
 
 const routes: Routes = [{path:'', component: MainPageComponent}, {path:'cadastrar', component: CadastrarComponent},
-{ path: "main-page/:material", component: DescricaoMaterialComponent },
-{path:'entrar', component:MainPanelComponent}, {path:"entrar/:cadastrar-agendamento", component:CadastrarAgendamentoComponent}];
+{path: "main-page/:material", component: DescricaoMaterialComponent },
+{path:'entrar', component:MainPanelComponent}, {path:"entrar/:cadastrar-agendamento/:elemento", component:CadastrarAgendamentoComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

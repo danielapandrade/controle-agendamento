@@ -4,18 +4,31 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Agendamento } from '../model/agendamento';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AgendamentoService {
 
+  
+
+
   url = 'http://localhost:3000/agendamentos'; 
+  item: any;
 
   constructor(private httpClient: HttpClient) { }
+
+
+
  
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
+
+
+
+
 
  
   getAgendamentos(): Observable<Agendamento[]> {
@@ -37,6 +50,8 @@ export class AgendamentoService {
 
 
   saveAgendamento(agendamento: Agendamento): Observable<Agendamento> {
+    agendamento.status="Aguardando autorização"
+    
     return this.httpClient.post<Agendamento>(this.url, JSON.stringify(agendamento), this.httpOptions)
       .pipe(
         retry(2),

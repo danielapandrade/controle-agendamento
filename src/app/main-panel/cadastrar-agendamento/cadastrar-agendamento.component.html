@@ -1,20 +1,25 @@
 <div class="card add-car">
   <h5 class="card-header">ADICIONAR AGENDAMENTO</h5>
+  <h5>{{elemento}}</h5>
   <div class="card-body">
     <form id="add-form" (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
 
 
       <div class="form-group">
-        <label for="model">Modelo</label>
-        <input type="text" [(ngModel)]="agendamento.item" id="item" name="item" #item="ngModel" required
-          class="form-control" [ngClass]="{ 'is-invalid': f.submitted && item.invalid }" placeholder="Digite o modelo">
-        <div *ngIf="f.submitted && item.invalid" class="invalid-feedback">
-          <div *ngIf="item.errors?.['required']">Informe qual item você deseja agendar.</div>
+        <div *ngIf=!isVisible>
+          <label for="model">Item</label>
+          <input type="text" [(ngModel)]="agendamento.item" id="item" name="item" #item="ngModel" required
+            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && item.invalid }" placeholder="Informe o item">
+          <div *ngIf="f.submitted && item.invalid" class="invalid-feedback">
+            <div *ngIf="item.errors?.['required']">Informe qual item você deseja agendar.</div>
+          </div>
         </div>
+
+
 
         <label for="model">Data</label>
         <input type="text" [(ngModel)]="agendamento.data" id="data" name="data" #data="ngModel" required
-          class="form-control" [ngClass]="{ 'is-invalid': f.submitted && data.invalid }" placeholder="Data">
+          class="form-control" [ngClass]="{ 'is-invalid': f.submitted && data.invalid }" placeholder="Informe a data">
         <div *ngIf="f.submitted && data.invalid" class="invalid-feedback">
           <div *ngIf="data.errors?.['required']">Informe a data do agendamento.</div>
         </div>
@@ -22,7 +27,7 @@
         <label for="model">Horário Início</label>
         <input type="text" [(ngModel)]="agendamento.horarioInicio" id="horarioInicio" name="horarioInicio"
           #horarioInicio="ngModel" required class="form-control"
-          [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite o modelo">
+          [ngClass]="{ 'is-invalid': f.submitted && model.invalid }" placeholder="Digite o horário de início">
         <div *ngIf="f.submitted && horarioInicio.invalid" class="invalid-feedback">
           <div *ngIf="horarioInicio.errors?.['required']">Informe o horário de início.</div>
         </div>
@@ -30,22 +35,30 @@
         <label for="model">Horário de Término</label>
         <input type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim" name="horarioFim" #horarioFim="ngModel"
           required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && model.invalid }"
-          placeholder="Digite o modelo">
+          placeholder="Informe o horário de término">
         <div *ngIf="f.submitted && horarioFim.invalid" class="invalid-feedback">
           <div *ngIf="horarioFim.errors?.['required']">Informe o horário de fim.</div>
         </div>
 
         <label for="model">Turno</label>
         <input type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno" #model="ngModel" class="form-control"
-          placeholder="Digite o modelo">
+          placeholder="Informe o turno">
 
-        <label for="model">Local</label>
-        <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel" class="form-control"
-          placeholder="Digite o modelo">
+
+
+
+
+        <div *ngIf=!isVisible>
+          <label for="model">Local</label>
+          <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #model="ngModel"
+            class="form-control" placeholder="Digite o modelo">
+        </div>
+
 
       </div>
 
-      <button type="submit" class="btn btn-primary btn-add-car">Salvar</button>
+      <button *ngIf=!isVisible type="submit" class="btn btn-primary btn-add-car">Salvar</button>
+      <button *ngIf=isVisible (click)="saveAuditorio(agendamento)" class="btn btn-primary btn-add-car">Salvar </button>
       <button type="reset" class="btn btn-secondary btn-add-car" (click)="cleanForm(f)">Cancelar</button>
     </form>
   </div>
