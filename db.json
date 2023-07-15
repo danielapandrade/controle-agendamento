@@ -3,12 +3,13 @@
     {
       "item": "projetor",
       "data": "2023-07-06",
-      "horarioInicio": "12h",
-      "horarioFim": "17h",
-      "turno": "vespertino",
+      "horarioInicio": "8h",
+      "horarioFim": "12h",
+      "turno": "matutino",
       "local": "auditório",
       "status": "Aguardando autorização",
-      "id": 2
+      "id": 2,
+      "isEdit": false
     },
     {
       "item": "microfone",
@@ -29,6 +30,26 @@
       "local": "sala 24",
       "status": "Aguardando autorização",
       "id": 3
+    },
+    {
+      "item": "Projetor",
+      "data": "2023-07-19",
+      "horarioInicio": "12h",
+      "horarioFim": "13h",
+      "turno": "vespertino",
+      "local": "sala 03",
+      "status": "Aguardando autorização",
+      "id": 4
+    },
+    {
+      "item": "Cabo HDMI",
+      "data": "2023-08-17",
+      "horarioInicio": "12h",
+      "horarioFim": "17h",
+      "turno": "vespertino",
+      "local": "sala 03",
+      "status": "Aguardando autorização",
+      "id": 5
     }
   ]
 }
