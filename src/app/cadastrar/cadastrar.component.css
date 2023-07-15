@@ -11,8 +11,8 @@
 .btn-class:hover {
 
     background-color: grey;
-  
-  }
+
+}
 
 
 .erros {
@@ -86,9 +86,36 @@ img {
 
     }
 
-   
-    * {
-        font-size: 12px;
+
+    .erros {
+        color: red;
+        font-size: 10px;
     }
+
+    .text {
+        white-space: nowrap;
+        font-size: 10px;
+    }
+
+    label {
+        font-size: 10px;
+    }
+
+    input {
+        font-size: 10px;
+    }
+
+
+    button{
+        font-size: 10px;
+    }
+
+    div {
+        font-size: 10px;
+       
+    }
+
+
+
 
 }
