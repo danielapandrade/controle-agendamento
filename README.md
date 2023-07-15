@@ -6,7 +6,7 @@ https://controle-agendamento.vercel.app/
 - [x] npm install <br />
 - [x] -Windows: npx json-server --watch db.json
 - [x] -Linux: json-server --watch db.json
- <br/>
+ | <br/>
 # CHECKLIST:
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
