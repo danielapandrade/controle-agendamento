@@ -1,22 +1,34 @@
 {
-    "users": [
-      {
-       
-        "nome": "tomaz.silva",
-        "segmento": "docente"
-      },
-      {
-        "nome": "carlos.sousa",
-        "segmento": "discente"
-      },
-      {
-        "nome": "daniel.mauricio",
-        "segmento": "técnico-administrativo"
-      },
-      {
-        "nome": "joao.inacio",
-        "segmento": "docente"
-      }
-    ]
-   
-  }
+  "agendamentos": [
+    {
+      "item": "projetor",
+      "data": "2023-07-06",
+      "horarioInicio": "12h",
+      "horarioFim": "17h",
+      "turno": "vespertino",
+      "local": "auditório",
+      "status": "Aguardando autorização",
+      "id": 2
+    },
+    {
+      "item": "microfone",
+      "data": "2023-07-06",
+      "horarioInicio": "12h",
+      "horarioFim": "17h",
+      "turno": "vespertino",
+      "local": "auditório",
+      "status": "Aguardando autorização",
+      "id": 3
+    },
+    {
+      "item": "videoteca",
+      "data": "2023-07-07",
+      "horarioInicio": "8h",
+      "horarioFim": "12h",
+      "turno": "matutino",
+      "local": "sala 24",
+      "status": "Aguardando autorização",
+      "id": 3
+    }
+  ]
+}
