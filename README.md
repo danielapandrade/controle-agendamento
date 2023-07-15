@@ -2,8 +2,8 @@
 https://www.figma.com/file/Y9INspI0nvY6EsNFTnWoDw/sistema-agendamento?type=design&node-id=0%3A1&t=bLPnvHFEcdVl89Hv-1
 # TO RUN:
 npm install <br />
-Windows: npx json-server --watch db.json
-Linux: json-server --watch db.json
+-Windows: npx json-server --watch db.json
+-Linux: json-server --watch db.json
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
