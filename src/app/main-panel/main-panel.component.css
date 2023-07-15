@@ -13,7 +13,7 @@ nav {
 
   margin-left: auto;
   margin-right: auto;
-  float:right;
+  float: right;
   width: 500px;
 
 }
@@ -222,4 +222,21 @@ label {
 [data-tooltip=""]::after,
 [data-tooltip=""]::before {
   display: none !important;
+}
+
+@media (max-width: 800px) {
+
+  section {
+    width: 100vw;
+    font-size: 8px;
+  }
+
+
+  .pag {
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+
+  }
 }
