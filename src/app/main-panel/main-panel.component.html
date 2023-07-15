@@ -1,0 +1,171 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="navbar-brand" href="#">
+    <img src="assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    <span class="text">A G E N D A M E N T O S</span>
+  </div>
+  <div>
+    <button [routerLink]="['/entrar/agendar']">
+      <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+      <span>AGENDAR</span></button>
+
+    <button class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor"
+        class="bi bi-person" viewBox="0 0 16 16">
+        <path
+          d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+      </svg></button>
+  </div>
+</nav>
+<section>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-xl-10">
+
+        <div class="card">
+          <div class="card-header p-3">
+            <h5>BUSCAR AGENDAMENTOS</h5>
+          </div>
+
+          <form>
+            <label>Material</label>
+            <input type="text" placeholder="Nome do material" name="search2">
+            <label>Data</label>
+            <input type="text" placeholder="Data" name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+          <div class="card-header p-3">
+            <h5>TODOS OS AGENDAMENTOS</h5>
+          </div>
+          <div class="card-body" data-mdb-perfect-scrollbar="true" style="position: relative; height: 400px">
+
+            <table class="table mb-0">
+              <thead>
+                <tr class="rectangle">
+                  <th scope="col">Item</th>
+                  <th scope="col">Data</th>
+                  <th scope="col">Horário de Início</th>
+                  <th scope="col">Horário de Término</th>
+                  <th scope="col">Turno</th>
+                  <th scope="col">Local</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+                <tr *ngFor="let agendamento of agendamentos | paginate: { itemsPerPage: 5, currentPage: paginaAtual };">
+                  <form id="add-form" click="editAgendamento(agendamento)"
+                    (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
+                  </form>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.item" id="item" name="item"
+                      #item="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && item.invalid }">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{agendamento.item}}
+                    </div>
+                  </td>
+
+                  <td *ngFor="let format of formatsDateTest">
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.data" id="data" name="data"
+                      #data="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && data.invalid }">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.data | date: format}}
+                    </div>
+                  </td>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.horarioInicio"
+                      id="horarioInicio" name="horarioInicio" #horarioInicio="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && horarioInicio.invalid }" />
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.horarioInicio}}
+                    </div>
+                  </td>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim"
+                      name="horarioFim" #horarioFim="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && horarioFim.invalid }">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{agendamento.horarioFim}}
+                    </div>
+                  </td>
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno"
+                      #turno="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && turno.invalid}">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.turno}}
+                    </div>
+                  </td>
+
+
+
+                  <td>
+                    <input *ngIf=agendamento.isEdit type="text" [(ngModel)]="agendamento.local" id="local" name="local"
+                      #local="ngModel" required class="form-control"
+                      [ngClass]="{ 'is-invalid': f.submitted && local.invalid }">
+                    <div *ngIf=!agendamento.isEdit>
+                      {{ agendamento.local}}
+                    </div>
+                  </td>
+
+                  <td>
+                    <div>
+                      {{agendamento.status}}
+                    </div>
+
+                  </td>
+                  <td>
+
+
+
+                    <div *ngIf=agendamento.isEdit class="dsp">
+                      <button class="btn btn-sm  btn-success" (click)="onEdit(agendamento)" data-toggle="tooltip" data-placement="top" title="Salvar alterações"><i class="fa fa-floppy-o"
+                          aria-hidden="true"></i>
+                      </button>
+                      <button data-toggle="tooltip" data-placement="top" title="Cancelar" class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false"><i class="fa fa-times"
+                          aria-hidden="true"></i>
+                      </button>
+                    </div>
+                    <div *ngIf=!agendamento.isEdit class="dsp">
+                      <button class="btn btn-sm btn-success" (click)=" editarItem(agendamento)" data-toggle="tooltip"
+                        data-placement="top" title="Editar">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true">
+                        </i>
+                      </button>
+                    </div>
+                    <div *ngIf=!agendamento.isEdit>
+                      <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteAgendamento(agendamento)"
+                        data-toggle="tooltip" data-placement="top" title="Apagar"><i class="fa fa-eraser"
+                          aria-hidden="true"></i></button>
+                    </div>
+
+                  </td>
+                </tr>
+              </tbody>
+             
+              
+
+            </table>
+
+            
+           
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<div class="pag">
+  <pagination-controls  (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+              
+  </pagination-controls>
+</div>

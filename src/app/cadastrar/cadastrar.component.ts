@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cadastrar',
@@ -6,5 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastrar.component.css']
 })
 export class CadastrarComponent {
+
+  isSubmitted = false;
+
+  constructor() {
+  }
+
+ 
+  submitForm(form: NgForm) {
+    this.isSubmitted = true;
+    if(!form.valid) {
+      return false;
+    } else {
+   
+    return true;
+    }
+  }
+
+
+
+  
 
 }

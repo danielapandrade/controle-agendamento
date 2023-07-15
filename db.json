@@ -1,0 +1,22 @@
+{
+    "users": [
+      {
+       
+        "nome": "tomaz.silva",
+        "segmento": "docente"
+      },
+      {
+        "nome": "carlos.sousa",
+        "segmento": "discente"
+      },
+      {
+        "nome": "daniel.mauricio",
+        "segmento": "técnico-administrativo"
+      },
+      {
+        "nome": "joao.inacio",
+        "segmento": "docente"
+      }
+    ]
+   
+  }

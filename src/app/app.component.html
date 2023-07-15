@@ -1,1 +1,3 @@
-<app-header></app-header>
+<app-header [agendamentos]="agendamentos" *ngIf="showHeader"></app-header>
+<router-outlet></router-outlet>
+<app-footer *ngIf="showFooter"></app-footer>

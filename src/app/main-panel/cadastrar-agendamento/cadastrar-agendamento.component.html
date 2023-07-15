@@ -1,0 +1,71 @@
+<div class="card add-car">
+  <h5 class="card-header">ADICIONAR AGENDAMENTO</h5>
+  
+  <div class="card-body">
+    <form id="add-form" (ngSubmit)="f.form.valid && saveAgendamento(f)" #f="ngForm" novalidate>
+
+
+      <div class="form-group">
+        <div >
+          <label for="model">Item</label>
+          <input type="text" [(ngModel)]="agendamento.item" id="item" name="item" #item="ngModel" required
+            class="form-control" [ngClass]="{ 'is-invalid': f.submitted && item.invalid }" placeholder="Informe o item">
+          <div *ngIf="f.submitted && item.invalid" class="invalid-feedback">
+            <div *ngIf="item.errors?.['required']">Informe qual item você deseja agendar.</div>
+          </div>
+        </div>
+
+
+
+        <label for="model">Data</label>
+        <input type="date" [(ngModel)]="agendamento.data" id="data" name="data" #data="ngModel" required
+          class="form-control" [ngClass]="{ 'is-invalid': f.submitted && data.invalid }" placeholder="Informe a data">
+        <div *ngIf="f.submitted && data.invalid" class="invalid-feedback">
+          <div *ngIf="data.errors?.['required']">Informe a data do agendamento.</div>
+        </div>
+
+        <label for="model">Horário de Início</label>
+        <input type="text" [(ngModel)]="agendamento.horarioInicio" id="horarioInicial" name="horarioInicial" #horarioInicial="ngModel"
+          required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && horarioInicial.invalid }"
+          placeholder="Informe o horário de início">
+        <div *ngIf="f.submitted && horarioInicial.invalid" class="invalid-feedback">
+          <div *ngIf="horarioInicial.errors?.['required']">Informe o horário de início.</div>
+        </div>
+
+        <label for="model">Horário de Término</label>
+        <input type="text" [(ngModel)]="agendamento.horarioFim" id="horarioFim" name="horarioFim" #horarioFim="ngModel"
+          required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && horarioFim.invalid }"
+          placeholder="Informe o horário de término">
+        <div *ngIf="f.submitted && horarioFim.invalid" class="invalid-feedback">
+          <div *ngIf="horarioFim.errors?.['required']">Informe o horário de fim.</div>
+        </div>
+
+       
+
+        <label for="model">Turno</label>
+        <input type="text" [(ngModel)]="agendamento.turno" id="turno" name="turno" #turno="ngModel"
+          required class="form-control" [ngClass]="{ 'is-invalid': f.submitted && turno.invalid }"
+          placeholder="Informe o turno do agendamento">
+        <div *ngIf="f.submitted && turno.invalid" class="invalid-feedback">
+          <div *ngIf="turno.errors?.['required']">Informe o turno do agendamento.</div>
+        </div>
+
+
+
+        <div >
+          <label for="model">Local</label>
+          <input type="text" [(ngModel)]="agendamento.local" id="local" name="local" #local="ngModel" class="form-control" placeholder="Informe o local do agendamento">
+        </div>
+        
+
+
+      </div>
+
+      <button [disabled]="item.invalid || data.invalid || turno.invalid || horarioInicial.invalid || horarioFim.invalid"  type="submit" class="btn btn-primary"  (click)="showAlert()">Salvar</button>
+      <div class="alert" [class.visible]="isVisible"> 
+        Agendamento efetuado com sucesso!
+      </div>
+      <button type="reset" class="btn btn-secondary"  [routerLink]="['/entrar']"  (click)="cleanForm(f)">Voltar</button>
+    </form>
+  </div>
+</div>

@@ -1,5 +1,8 @@
-<div class="card">
-    <div class="card-body">
-      {{descricao}}
-    </div>
+<div class="card" *ngFor="let material of materialList">
+  <div class="card-body">
+    <h1>{{material.nome}}</h1>
   </div>
+  <div class="card-body">
+    <h2> {{material.descricao}}</h2>
+  </div>
+</div>
