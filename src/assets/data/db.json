@@ -1,16 +1,6 @@
 {
   "agendamentos": [
     {
-      "item": "auditório",
-      "data": "2023-07-06",
-      "horarioInicio": "12h",
-      "horarioFim": "17h",
-      "turno": "vespertino",
-      "local": "auditório",
-      "status": "Aguardando autorização",
-      "id": 1
-    },
-    {
       "item": "projetor",
       "data": "2023-07-06",
       "horarioInicio": "12h",

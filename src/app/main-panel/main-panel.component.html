@@ -125,10 +125,10 @@
 
 
                     <div *ngIf=agendamento.isEdit class="dsp">
-                      <button class="btn btn-sm btn-danger" (click)="onEdit(agendamento)"><i class="fa fa-floppy-o"
+                      <button class="btn btn-sm  btn-success" (click)="onEdit(agendamento)" data-toggle="tooltip" data-placement="top" title="Salvar alterações"><i class="fa fa-floppy-o"
                           aria-hidden="true"></i>
                       </button>
-                      <button class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false"><i class="fa fa-times"
+                      <button data-toggle="tooltip" data-placement="top" title="Cancelar" class="btn btn-sm btn-danger" (click)="agendamento.isEdit = false"><i class="fa fa-times"
                           aria-hidden="true"></i>
                       </button>
                     </div>
