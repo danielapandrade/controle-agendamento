@@ -5,7 +5,7 @@ https://controle-agendamento.web.app/
 # TO RUN:
 - [x] npm install <br />
 - [x] -Windows: npx json-server --watch db.json
-- [x] -Linux: json-server --watch db.json
+- [x] -Linux: json-server --watch db.json|
  <br/>
  
 # CHECKLIST:
